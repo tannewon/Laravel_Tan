@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\categoriesController;
 use App\Http\Controllers\admin\ProductsController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\HomeController;
 
 
 /*
@@ -17,9 +18,7 @@ use App\Http\Controllers\admin\DashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',function(){
-return'<h1>TRANG CHU UNICODE</h1>'
-})->name ('home');
+Route::get('/',[HomeController::class,'index'])->name ('home');
 
 
 Route::prefix('categories')->group(function(){
@@ -38,6 +37,7 @@ Route::prefix('categories')->group(function(){
 
     
 });
+Route::get('san-pham/{id}',HomeController::class,'getProductDetail');
 Route::middleware('Auth.admin')->group(function(){
     Route::get('/', [DashboardController::class,'index']);
 
