@@ -11,8 +11,10 @@ class CategoriesController extends Controller
 
     }
     // hien thi danh sach chuyen muc
-    public function index(){
-        return view('clients/categories/list');
+    public function index(Request $request){
+        // return view('clients/categories/list');
+
+
     }
     // lay ra mot chuyen muc
     public function Categories($id){
@@ -32,7 +34,10 @@ class CategoriesController extends Controller
         return view('clients/categories/add');;
     }
     public function handleAddCategories(){
-        return 'xu li chuyen muc';
+        // return 'xu li chuyen muc';
+        if($request->method('POST')){
+            echo'phuong thuc';
+        }
     }
     // xoa du lieu
     public function deleteCategories($id){

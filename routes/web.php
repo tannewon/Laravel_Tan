@@ -21,8 +21,8 @@ use App\Http\Controllers\HomeController;
 Route::get('/',[HomeController::class,'index'])->name ('home');
 
 
-Route::prefix('categories')->group(function(){
-    Route::get('/',[categoriesController::class,'index'])->name('categories.list');
+Route::middleware('Auth.admin')->prefix('categories')->group(function(){
+    Route::get('',[categoriesController::class,'index'])->name('categories.list');
     // lay chi tiet 1 chuyen muc
     Route::get('/edit/{id}',[categoriesController::class,'categories'])->name('categories.edit');
     // xu li update chuyen muc
@@ -37,11 +37,11 @@ Route::prefix('categories')->group(function(){
 
     
 });
-Route::get('san-pham/{id}',HomeController::class,'getProductDetail');
-Route::middleware('Auth.admin')->group(function(){
-    Route::get('/', [DashboardController::class,'index']);
+// Route::get('san-pham/{id}',HomeController::class,'getProductDetail');
+// Route::middleware('Auth.admin')->group(function(){
+//     Route::get('/', [DashboardController::class,'index']);
 
     Route::resource('products', ProductsController::class)->middleware('Auth.admin.product');
-});
+// });
 
 
