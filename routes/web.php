@@ -32,7 +32,10 @@ Route::middleware('Auth.admin')->prefix('categories')->group(function(){
     // handler
     Route::post('/add',[categoriesController::class,'handleAddCategories']);
     // xoa
-    Route::delete('/add/{id}',[categoriesController::class,'deleteCategories'])->name('categories.delete');
+   
+    Route::post('/upload',[categoriesController::class,'handlerFile'])->name('categories.upload');
+    Route::post('/upload',[categoriesController::class,'handlerFile'])->name('categories.upload');
+    // Route::delete('/delete/{id}',[categoriesController::class,'deleteCategories'])->name('categories.delete');
     
 
     

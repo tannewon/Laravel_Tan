@@ -33,10 +33,12 @@ class CategoriesController extends Controller
     public function addCategories(){
         return view('clients/categories/add');;
     }
-    public function handleAddCategories(){
+    public function handleFile(Request $request){
         // return 'xu li chuyen muc';
-        if($request->method('POST')){
-            echo'phuong thuc';
+        // if($request->method('POST')){
+        //     echo'phuong thuc';
+        $file = $request->file('photo');
+        dd($file);
         }
     }
     // xoa du lieu
@@ -44,4 +46,4 @@ class CategoriesController extends Controller
         return 'xoa chuyen muc';
         
     }
-}
+
