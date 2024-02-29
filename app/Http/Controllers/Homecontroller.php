@@ -17,6 +17,8 @@ class Homecontroller extends Controller
         $this->data['index']=1;
         $this->data['dataArr']=[];
         $this->data['number']=3;
+        $this->data['message']='dat hang thanh cong';
+
         return view('home',$this->data);
 
     }

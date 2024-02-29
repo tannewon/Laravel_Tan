@@ -5,17 +5,9 @@
     {!! !empty($content)?$content:false !!}
 </div> 
 <hr>
-@switch($number)
-    @case(1)
-    @case(3)
-    @case(5)
-        <p>SO THU NHAT</P>
-        @break
-    @case(2)
-    <p>SO THU hai</P>
-        @break
-    @default
-    <p>SO THU ba</P>
-        @break
+@php
+$message = "dat hang thanh cong ";
+@endphp
+@include('parts.notice')
 
     
