@@ -17,5 +17,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 Route::get('/',[HomeController::class,'index']);
+Route::get('san pham',[HomeController::class,'product']);
+
 
 
