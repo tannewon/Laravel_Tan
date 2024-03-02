@@ -18,8 +18,9 @@
             @yield('content')
         </div>
     </main>
-    @section('name')
-    <p>Min side 3</p>
-    @section
+    <footer>
+        <h1>FOOTER</h1>
+    </footer>
+
 </body>
 </html>
