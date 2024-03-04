@@ -8,7 +8,9 @@
     @datetime('2022-12-16 15:00 30')
     @include('clients.slide.content')
     @include('clients.contents.about')
-
+    @env('local')
+    <p>Môi trường dv</p>
+    @endenv
 
 @endsection
 
