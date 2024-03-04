@@ -18,8 +18,6 @@
             @yield('content')
         </div>
     </main>
-    @section('name')
-    <p>Min side 3</p>
     @section
     @endsection
 
