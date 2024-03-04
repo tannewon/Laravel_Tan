@@ -16,8 +16,11 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',[HomeController::class,'index']);
-Route::get('san pham',[HomeController::class,'product']);
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/san-pham', [HomeController::class, 'products'])->name('product');
+Route::get('/them-san-pham', [HomeController::class, 'getAdd']);
+Route::post('/them-san-pham', HomeController::class, 'postAdd');
 
 
 

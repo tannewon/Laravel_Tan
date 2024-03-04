@@ -18,8 +18,15 @@
             @yield('content')
         </div>
     </main>
-    @section('name')
-    <p>Min side 3</p>
     @section
+    @endsection
+
+    @section('css')
+    @endsection
+    @section('js')
+    @endsection
+    <script>
+        console.log('ok')
+    </script>
 </body>
 </html>
