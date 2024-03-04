@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Blade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -11,10 +12,10 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
-    {
-        //
-    }
+    // public function register()
+    // {
+    //     //
+    // }
 
     /**
      * Bootstrap any application services.
@@ -24,5 +25,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        Blade::if('env', function ($value) { //@env('local')
+
+            if (config('app.env') ===$value) {
+                return false;
+            
+            }
+
+            return false;
+        });
     }
 }
