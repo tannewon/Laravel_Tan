@@ -33,7 +33,7 @@ Route::get('san pham',[HomeController::class,'product']);
     return view('clients.demo-test');
     })->name('demo-response');
     
-    Route::post('demo-response', function (request $request) { 
+    Route::post('demo-response', function (Request $request) { 
     if (!empty($request->username)){
     return back()->withInput()->with('mess', 'Xác thực thành công');
     }
@@ -43,10 +43,7 @@ Route::get('san pham',[HomeController::class,'product']);
     
     });
 
-
-
-
-
-
-});
-
+    Route::get('download-image', [HomeController::class, 'downloadImage'])->name
+    ('download-image');
+    Route::get('download-doc', [HomeController::class, 'downloadDoc'])->name
+    ('download-Doc');
