@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Http\Requests;
 class Homecontroller extends Controller
 {
     public $data = [];
@@ -21,7 +21,7 @@ class Homecontroller extends Controller
     return view('clients.add', $this->data);
 }
 
-public function postAdd(Request $request)
+public function postAdd(ProductRequest $request)
 {
     $request->validate([
         'product_name' => 'required|min:6',
