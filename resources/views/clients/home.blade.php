@@ -4,8 +4,25 @@
 @endsection
 
 @section('content')
-    <h1>TRANG CHU</h1>
+    @if(session('msg'))
+        <div class="alert alert-info">
+            {{ session('msg') }}
+        </div>
+    @endif
+
+    <h1>Trang chủ</h1>
+    @include('clients.contents.slide')
+    @include('clients.contents.about')
+
+    @env('production')
+        <p>Môi trường Production</p>
+    @elseenv('test')
+        <p>Môi trường test</p>
+    @else
+        <p>Môi trường dev</p>
+    @endenv
 @endsection
+
 @endenv
 <x-alert type="info" content="$message" data-icon="youtube" />
 {{-- <x-inputs.button />
